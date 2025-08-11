@@ -4,5 +4,8 @@ public class Helloworld {
 
     System.out.println("Hello");
     //System.out.println("") text in "" to print out
+    //use Run or Play to test java
+    //shift+cmd+f: Auto format the code
+    //shift+cmd+k : Restart VSCode
   }
 }
