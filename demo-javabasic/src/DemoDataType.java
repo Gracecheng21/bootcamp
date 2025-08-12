@@ -64,6 +64,47 @@ public class DemoDataType {
         x2 = x2 + 8;
         System.out.println(x2); // 6+1+10+8 = 25
 
+        //Store integer: byte, short, int, long
+        byte b1 =3;
+        short s1 = 3;
+        int i1 = 3;
+        long l1 = 3;
+
+        //byte (-128 to 127)
+        //short (-32768 to 32767)
+        //int (-21億 to 21億)
+        //long (2^63)
+        b1 = -128;
+        //b1 +1 = 128 overflow
+        s1 = 32_767;
+        //s1 +1 = 32768 overflow
+        i1 = 2_147_483_647;
+        //int + int = int (overflow)
+        i1 = i1 +1;
+        System.out.println(i1);//i1 = 2147483648 overflow
+
+        // Prepaid an long value 22億 (right hand side)
+        // Assign a value into long variable (left hand side)
+        // l1 = 2_200_000_000; //value overflow system error
+        l1 = 2_200_000_000L;
+        l1 = l1 + 3L;
+        System.out.println(l1);
+        l1 = l1 + 2_200_000_000L;
+        System.out.println(l1);//long + long = long (check by java)
+
+        //long + int = long + long(include int value) = long
+        long l2 = 2_200_000_000L + 5;
+        System.out.println(l2);
+
+        //int include byte and short value
+        //no byte bx = 1b or short sx = 1s
+        //int i8 = 9; byte b9 = i8;
+        //byte can't be int, overflow in java system error unsafe
+        byte b10 = 3; //direct value include in byte value, true to java
+        //short s10 = i8; // unsafe in java
+
+        // ! the range of int value should solve the majority of the problem in java system.
+        // long is not a default type of variable for storing integer.
 
 
 
