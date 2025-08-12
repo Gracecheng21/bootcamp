@@ -106,6 +106,66 @@ public class DemoDataType {
         // ! the range of int value should solve the majority of the problem in java system.
         // long is not a default type of variable for storing integer.
 
+        // boolean (either true or false)
+        boolean b9 = true;
+        b9 = false;
+
+        int result = 5;
+        // "result % 2 == 1" is true
+        boolean isResultOddNumber = result % 2 == 1;
+        // "==" checking if equals to
+        System.out.println(isResultOddNumber); // true
+
+        int result1 = 10;
+        boolean resultOddNumber = result1 % 2 == 1;
+        System.out.println(resultOddNumber); // false
+
+        // boolean isSomething/shouldSomething (formula / definition)
+        int age = 65;
+        boolean isElderly = age >= 65;
+        System.out.println(isElderly); // true
+
+        // if age = 64 , boolean will be false
+        int johnAge = 64;
+        boolean isHeElderly = johnAge >= 65; 
+        System.out.println(isHeElderly); // false
+
+        // char : Unicode-encode character from 0 to 65,535
+        // should be '' single quotes
+        // assign char value 'a' into char variable
+        char c1 = 'a';
+        System.out.println(c1); // a
+        c1 = '$';
+        c1 = '+';
+        c1 = 'a';
+        char c2 = 'A';
+        System.out.println(c1 == c2); // false, because Java is case sensitive
+
+        char lastName = '陳';
+        System.out.println(lastName);
+        // ! we cannot assign a bigger range of variable to smaller range of variable
+
+        // force java assignment
+        byte b40 = (byte) 129L;
+        System.out.println(b40);
+        // -127L is overflow to byte, but we force java to make it
+
+        // float (store 32bit decimal number)
+        // 3.14159 is double value, unsafe in float
+        // assign double value to float variable, put f after value
+        float f1 = 3.14159f;
+
+        // Problem in float
+        //f1 = 0.1 + 0.2;//unsafe it is double
+        f1 = 0.3f + 0.4f;
+        System.out.println(f1); // 0.70000005
+        // it depends the formula value can be calculate
+
+
+
+
+
+
 
 
 
