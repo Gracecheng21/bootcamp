@@ -1,6 +1,6 @@
 public class DemoOperator {
   public static void main(String[] args) {
-    // +,-,*,％（／）
+    // +,-,*,/,%
     int x = 3;
     x = 6 + 9;
 
@@ -52,7 +52,7 @@ public class DemoOperator {
     double d6 = 0.2 + 0.3;
     System.out.println(d6); // 0.5 not every formula is wrong
 
-    // ! remainder (餘數)
+    // ! remainder % (餘數)
     int r8 = 10 % 3;
     System.out.println(r8); // 1
 
@@ -66,12 +66,14 @@ public class DemoOperator {
     // "= t +" <-> "+="
     System.out.println(t); //4
 
-    int w = 0;
-    w--;
-    --w;
-    w = w - 1;
-    w -= 1;
+    int w = 0; // w is initialized to 0
+    w--;       // w = w - 1; (post-decrement), now w = -1
+    --w;       // w = w - 1; (pre-decrement), now w = -2
+    w = w - 1; // subtract 1 directly, now w = -3
+    w -= 1;    // subtract 1 using compound assignment, now w = -4
     System.out.println(w); // -4
+    // w = 0; w = -1; w = -2; w = -3; w = -4;
+    // All four lines decrease w by 1, using different syntax.
 
     // +/- >1 value
     int o = 3;
@@ -101,7 +103,7 @@ public class DemoOperator {
     System.out.println(isFemale); // true
     // remember to read from left to right
 
-    
+
 
 
 
