@@ -19,8 +19,7 @@ public class Animal {
   public static void main(String[] args) {
     // Person object
     // Animal object
-    // Create an Animal object
-    //Animal animal1 = new Animal(); // Animal (anyname) = new Animal();
+    // Create an Animal object, Animal (anyname) = new Animal();
     Animal vincent = new Animal(); // Create a new Animal object named Vincent
     vincent.setDob(LocalDate.of(2020, 10, 9)); // Set the date of birth to October 9, 2020
     LocalDate vincentDob = vincent.getDob(); // Get the date of birth of Vincent
