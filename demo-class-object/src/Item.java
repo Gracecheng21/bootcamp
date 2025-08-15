@@ -4,7 +4,20 @@ public class Item {
   private double price;
   private int quantity; // quantity 件數用整數int, 用double會有小數點問題
 
+  // ! Constructor
+  // ! By default, Java Class has a default empty constructor (implicit exisits) 自動生成的空構造器
   // Constructor
+  // 1. Constructor has No return type
+  // 2. Constructor name is same as class name
+  // 3. Constructor is used to initialize the object
+  // 4. Constructor can have parameters
+  // 5. If no constructor is defined, Java will provide a default constructor
+  // 6. Constructor can be overloaded (多個同名方法，參數不同)
+  // 7. Constructor cannot be static, final, or abstract
+  // 8. Constructor cannot return a value
+  public Item() { // ! empty constructor: No parameters
+  }
+
   public Item(double price, int quantity) {
     this.price = price;
     this.quantity = quantity;
@@ -24,20 +37,6 @@ public class Item {
   // this.quantity refers to the quantity attribute of the current Item object
   // ! item1.setQuantity(5); // This will set the quantity of the item1 object to 5
 
-  // Getter for price
-  public double getPrice() {
-    return price;
-  }
-
-  // Getter for quantity
-  public int getQuantity() {
-    return quantity;
-  }
-
-  // Method to calculate total price
-  public double getTotalPrice() {
-    return price * quantity; // Total price = price * quantity
-  }
 
   public double getSubTotal() {
     return BigDecimal.valueOf(this.price) //
@@ -54,6 +53,8 @@ public class Item {
 
 
   public static void main(String[] args) {
+    // ! new Item() is the default constructor
+
     // Create an Item object
     // set the price of 111.11
     // set the quantity of 2

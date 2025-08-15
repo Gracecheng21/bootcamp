@@ -170,7 +170,7 @@ public class DemoIf {
       // charAt
       // Check if the first character of a string is 'c', if yes, print "Yes", if not, print "No"
       String s3 = "chain";
-      if (s3.charAt(0)) == 'c') {
+      if (s3.charAt(0) == 'c') {
         System.out.println("Yes"); // condition is true, so it prints this line
       } else {
         System.out.println("No"); // condition is false, so it won't print this line

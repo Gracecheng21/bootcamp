@@ -1,68 +1,72 @@
 // HKTVMall
+
+import java.math.BigDecimal;
+
 public class Customer {
   private Order[] orders; // Array of orders placed by the customer
-  private Item[] items;  // Array of items available for the customer
-  private double balance; // Customer's balance
 
+  // 以下係自己做
   // Constructor
-  public Customer(Order[] orders, Item[] items, double balance) {
-    this.orders = orders; // Initialize the orders placed by the customer
-    this.items = items;   // Initialize the items available for the customer
-    this.balance = balance; // Set the customer's balance
+  public Customer(Order[] orders) {
+    this.orders = orders;
   }
-  // Setter for orders
+
+  // Setter for orders (不是必須，按用家所需要而寫)
   public void setOrders(Order[] orders) {
-    this.orders = orders; // Set the orders placed by the customer
+    this.orders = orders;
   }
 
-public void setItems(Item[] items) {
-  this.items = items; // Set the items available for the customer
-}
-
-  public void setBalance(double balance) {
-    this.balance = balance; // Set the customer's balance
-  }
-  // Getter for orders
-  public Order[] getOrders() {
-    return this.orders; // Return the orders placed by the customer
-  }
-
-  public Item[] getItems() {
-    return this.items; // Return the items available for the customer
-  }
-
-  public double getBalance() {
-    return this.balance; // Return the customer's balance
-  }
-
-  // Method to calculate total price of all orders placed by the customer
-  public double getTotalSpent() { //
-    double totalSpent = 0.0; // Initialize total spent to 0.0
-    for (Order order : orders) { // Iterate through each order
-      totalSpent += order.getTotalPrice(); // Add each order's total price to the total spent
+  public void addOrder(Order newOrder) {
+    Order[] orders = new Order[this.orders.length + 1]; // 開新array+1
+    for (int i = 0; i < this.orders.length; i++) { // for loop 抄舊array
+      orders[i] = this.orders[i]; // copy舊orders to 新orders
     }
-    return totalSpent; // Return the total amount spent by the customer
+    // !
+    orders[orders.length - 1] = newOrder; // 放新order去新array個尾
+    this.orders = orders; // 重新定義order地址為新order
   }
-  public static void main(String[] args) {
-    // Create an array of Item objects
-    Item[] items = new Item[2]; // Create an array to hold 2 items
-    items[0] = new Item(100.0, 2); // Create first item with price 100.0 and quantity 2
-    items[1] = new Item(50.0, 3); // Create second item with price 50.0 and quantity 3
+  // Method Presentation
+  // ! -> totalPrachasedAmount()
+  // 使用double方便用家提取數字
+  public double totalPrachasedAmount() {
+    BigDecimal sum = BigDecimal.ONE;
+    for (Order order : this.orders) {
+      sum = sum.add(BigDecimal.valueOf(order.total()));
+    }
+    return sum.doubleValue();
+  }
 
+  // method presentation
+  // -> isVip(), totalPurchasedAmount > 100,000
+  public boolean isVip() {
+    return this.totalPrachasedAmount() > 100_000;
+  }
+
+    // Customer A, OrderA & B
+    // Customer B, OrderC
+
+    // And with some items...
+
+    // Customer A -> isVip -> true
+    // Customer B -> isVip -> false
+  
+  public static void main(String[] args) {}
+
+
+
+//  public static void main(String[] args) {
     // Create an array of Order objects
-    Order[] orders = new Order[1]; // Create an array to hold 1 order
-    orders[0] = new Order(); // Create a new Order object
-    orders[0].setItems(items); // Set the items in the order
+//    Order[] orders = new Order[1]; // Create an array to hold 1 order
+//    orders[0] = new Order(); // Create a new Order object
+//    orders[0].setItems(items); // Set the items in the order
 
-    Customer customer = new Customer(orders, items, 500.0); // Create a new Customer object with orders, items, and balance
+//    Customer customer = new Customer(orders); // Create a new Customer object with orders
 
-    System.out.println("Total Spent: " + customer.getTotalSpent()); // Output total amount spent by the customer
-    System.out.println("Customer Balance: " + customer.getBalance()); // Output customer's balance
+    // System.out.println("Total Spent: " + customer.getTotalSpent()); // Output total amount spent by the customer
+    // System.out.println("Customer Balance: " + customer.getBalance()); // Output customer's balance
   }
   // ! This main method is for testing purposes
   // ! It creates a Customer object with orders and items, and prints the total spent and balance.
-  
-
 
 
 

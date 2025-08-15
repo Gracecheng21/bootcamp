@@ -21,7 +21,7 @@ public class Circle {
     this.radius = radius; // Set the radius of the circle
   }
   // Method to get the area of the circle: radius * radius * π (Math.PI)
-  public double getArea() {
+  public BigDecimal getArea() {
      return BigDecimal.valueOf(this.radius); //
 
   }

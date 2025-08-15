@@ -1,6 +1,16 @@
 // ! One to Many
-public class Order {
+
+import java.math.BigDecimal;
+
+public class Order { // Order class represents an order placed by a customer
+  private static Order orders;
   private Item[] items; // Array of items in the order
+
+  // ! Constructor (default constructor)
+  public Order() {
+    // ! Initialize items as an empty array when trying to access items in the order.
+    this.items = new Item[0]; // Initialize items as an empty array
+  }
 
   // setter, getter
   // ! 現實中，呢條setter可能會有驗證邏輯，例如檢查items是否為空
@@ -8,41 +18,65 @@ public class Order {
     this.items = items; // Set the items in the order
   }
 
-  // !
+  // public Item[] getItems() {
+  // return this.items; // Return the items in the order
+  // }
+
+  public double[] subtotals() {
+    double[] subtotals = new double[this.items.length];
+    for (int i = 0; i < this.items.length; i++) {
+      subtotals[i] = this.items[i].subtotal(); // Assuming Item has getSubtotal() method
+    }
+    return subtotals;
+  }
+
+  // !!
   public void addItem(Item item) {
-    // Add an item to the order
-    if (items == null) {
-      items = new Item[0];
+    // Create a new array: Add an item to the order
+    Item[] items = new Item[this.items.length + 1]; // Create a new array with one more item (新建一個新items陣列，長度比舊items多1)
+    for (int i = 0; i < this.items.length; i++) { // for loop to copy existing items (for循環複製舊items)
+      items[i] = this.items[i]; // Copy existing items to the new array （複製舊items到新items）
     }
-    Item[] newItems = new Item[items.length + 1]; // Create a new array with one more item
-    System.arraycopy(items, 0, newItems, 0, items.length); // Copy existing items to the new array
-    newItems[items.length] = item; // Add the new item at the end
-    this.items = newItems; // Update the items in the order
+    items[this.items.length] = item; // Add the new item to the end of the new array (將新item放到新items的最後一個位置)
+    this.items = items; // Update the order's items to the new array (更新order的items為新items)
   }
-
-  public Item[] getItems() {
-    return this.items; // Return the items in the order
-  }
-
-  // Method to calculate total price of the order
-  public double getTotalPrice() {
-    double total = 0.0; // Initialize total price to 0.0
-    for (Item item : items) { //
-      total += item.getTotalPrice(); // Add each item's total price to the total
+  // !! 
+  public double total() {
+    BigDecimal sum = BigDecimal.ZERO;
+    for (Item item : this.items) {
+      // BigDecimal add() -> new BigDecimal Object
+      sum = sum.add(BigDecimal.valueOf(item.subtotal()));
     }
-    return total; // Return the total price of the order
+    return sum.doubleValue();
   }
 
-public static void main(String[] args) {
-  // Create an array of Item objects （現實中不合理，應該用addItem方法）
-  Item[] items = new Item[2]; // Create an array to hold 2 items
-  items[0] = new Item(100.0, 2); // Create first item with price 100.0 and quantity 2
-  items[1] = new Item(50.0, 3); // Create second item with price 50.0 and quantity 3
+    public static void main(String[] args) {
+        Item item1 = new Item();
+        item1.setPrice(73.3);
+        item1.setQuantity(2);
 
-  Order order = new Order(); // Create a new Order object
-  order.setItems(items); // Set the items in the order
-  //
+        Item item3 =new Item();
+        item2.setPrice(99.9);
+        item2.setQuantity(3);
 
-  System.out.println("Total Price: " + order.getTotalPrice()); // Output total price of the order
+        Order.order1 = new Order();
+        order1.add(item1);
+        order1.add(item2);
+        order1.add(item3);
+
+        System.out.println(Arrays.toString(order1.subtotals()));
+        System.out.orintln(order1.total());
+
+        Order.order2 = new Order ();
+        System.out.println(order2.total());
+        System.out.println(Arrays.toString(order2.subtotal()));
+
+        // System.out.println
+
+      }
+
 }
+
+
+
 }
