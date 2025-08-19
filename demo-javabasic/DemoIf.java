@@ -26,6 +26,8 @@ public class DemoIf {
     // You can change the value of x to see different outputs.
 
     // if + else if + else example
+    // Step 1: try "if" condition, if it is true, execute the action, and then. EXIT
+    // Step 2: if the Step 1 result is false, then "else if" condition, if it is true, execute the action, and then EXIT
     int y = 100;
     if (y < 90) { // false, so it won't print this line
       System.out.println("y is less than 90");
@@ -34,21 +36,6 @@ public class DemoIf {
     } else {
       System.out.println("y >= 100"); // condition is true, so it prints this line
     } // Note: The above code will print "y >= 100" since y is 100.
-
-    // double if example
-    int z = 5;
-    if (z < 10) {
-      System.out.println("z is less than 10"); // condition is true, so it prints this line
-      if (z < 6) {
-        System.out.println("z is less than 6"); // nested condition is true, so it prints this line
-      } else {
-        System.out.println("z is greater than or equal to 6"); // nested condition is false, so it won't print this line
-      }
-    } else {
-      System.out.println("z is greater than or equal to 10"); // outer condition is false, so it won't print this line
-    }
-    // Note: The above code will print "z is less than 10" and "z is less than 6" since z is 5.
-    // You can change the value of z to see different outputs.
 
     // double w
     // if w < 100 , print "ABC / "w is less than 100"
@@ -86,6 +73,20 @@ public class DemoIf {
     }
     // Note: The above code will print "GHI / u is not between 103 and 110" since u is 120.
 
+    // double if example
+    int z = 5;
+    if (z < 10) {
+      System.out.println("z is less than 10"); // condition is true, so it prints this line
+      if (z < 6) {
+        System.out.println("z is less than 6"); // nested condition is true, so it prints this line
+      } else {
+        System.out.println("z is greater than or equal to 6"); // nested condition is false, so it won't print this line
+      }
+    } else {
+      System.out.println("z is greater than or equal to 10"); // outer condition is false, so it won't print this line
+    }
+    // Note: The above code will print "z is less than 10" and "z is less than 6" since z is 5.
+    // You can change the value of z to see different outputs.
 
     // if + else if + else example with boolean
     boolean isTrue = true; // you can change this value to test different conditions
@@ -114,15 +115,22 @@ public class DemoIf {
 
     // AND && example
     // OR ||
+
+    int c = 1;
+    int d = 20;
+    if(c > 3 || d < 15) { // OR
+      System.out.println("c > 3 OR d < 15.");
+    } else {
+      System.out.println("Error."); // Print
+    }
+
     int a = 10;
     int b = 20;
     if (a < 15 && b > 15) {
-      System.out.println(
-          "Both conditions are true: a is less than 15 and b is greater than 15"); // condition is true, so it prints this line
+      System.out.println("Both conditions are true"); // condition is true, so it prints this line
     } else {
       System.out.println("At least one condition is false"); // condition is false, so it won't print this line
     }
-
     if (a > 3 || b < 15) {
         System.out.println("a > 3 OR b < 15 is true"); // condition is true, so it prints this line
       } else {
@@ -130,7 +138,7 @@ public class DemoIf {
       } // Note: The above code will print "Both conditions are true: a is less than 15 and b is greater than 15" since a is 10 and b is 20.
 
       // be careful with the order of operations
-      // AND && has higher precedence than OR ||
+      // ! AND && has higher precedence than OR ||
       if (a < 15 || b > 15 && a > 5) {
         System.out.println("This condition is true"); // condition is true, so it prints this line
       } else {
@@ -147,13 +155,23 @@ public class DemoIf {
       // Note: The above code will print "It's not raining!" since isRaining is false.
       // You can change the value of isRaining to see different outputs.
 
+      // String
+      String s1 = "hello";
+      System.out.println(s1.length()); // 5
+
+      if (s1.length() > 3) {
+        System.out.println("Java"); // print
+      } else {
+        System.out.println("Python");
+      }
+
       // equals() + if
       String s2 = "Javascript";
       int score = 0;
-      if (s2.equals("Java")) {
+      if (s2.equals("Java")) { // false
         score += 1;
-      } else {
-        score += 2;
+      } else { // true
+        score += 2; // print
       }
       System.out.println(score); // prints 2, since s2 is "Javascript" and not "Java"
 
@@ -167,10 +185,11 @@ public class DemoIf {
         System.out.println("The color is not blue or green"); // condition is true, so it prints this line
       }
 
-      // charAt
+      // charAt njj// ! AND && has higher precedence than OR ||
       // Check if the first character of a string is 'c', if yes, print "Yes", if not, print "No"
-      String s3 = "chain";
-      if (s3.charAt(0) == 'c') {
+      //or if the last character is 'd' and the middle character is 'a'
+      String s3 = "chain"; // == means equal to same variable
+      if (s3.charAt(0) == 'c' || s3.charAt(s3.length() - 1) == 'd' && s3.charAt(s3.length() / 2) == 'a') { 
         System.out.println("Yes"); // condition is true, so it prints this line
       } else {
         System.out.println("No"); // condition is false, so it won't print this line
@@ -178,10 +197,9 @@ public class DemoIf {
       // Note: The above code will print "Yes" since the first character of s3 is 'c'.
       // You can change the value of s3 to see different outputs.
 
-      
 
 
-      // Nested if example
+      // Nested if example (having one if statement inside another if statement)
       int score1 = 85; // you can change this value to test different conditions
       if (score1 >= 90) {
         System.out.println("Grade: A"); // condition is true, so it prints this line

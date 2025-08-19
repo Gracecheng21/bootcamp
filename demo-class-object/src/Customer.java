@@ -6,17 +6,18 @@ public class Customer {
   private Order[] orders; // Array of orders placed by the customer
 
   // 以下係自己做
-  // Constructor
+  // Constructor (length object)
   public Customer(Order[] orders) {
-    this.orders = orders;
+    this.orders = new Order[0]; // set new array for address memory
   }
 
-  // Setter for orders (不是必須，按用家所需要而寫)
-  public void setOrders(Order[] orders) {
-    this.orders = orders;
+  // Setter for orders (不是必須，按用家所需要而寫) no setter for security
+  public void setOrders(Order[] orders) { //任由用戶隨意新增order
+    this.orders = orders; 
   }
 
-  public void addOrder(Order newOrder) {
+  // add / remove (Alterative) 
+  public void addOrder(Order newOrder) { // 由開發者控制新增order
     Order[] orders = new Order[this.orders.length + 1]; // 開新array+1
     for (int i = 0; i < this.orders.length; i++) { // for loop 抄舊array
       orders[i] = this.orders[i]; // copy舊orders to 新orders
@@ -70,4 +71,4 @@ public class Customer {
 
 
 
-}
+

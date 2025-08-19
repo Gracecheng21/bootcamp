@@ -1,5 +1,5 @@
 public class DemoOperator {
-  public static void main(String[] args) {
+  public static void main(String[] args) { //shortcut main
     // +,-,*,/,%
     int x = 3;
     x = 6 + 9;
@@ -7,7 +7,7 @@ public class DemoOperator {
     int y = 5 + x - 10;
     System.out.println(y); // 10
 
-    int a = y - 9 * 2;
+    int a = y - 9 * 2;  // 9 * 2 first
     System.out.println(a); // -8
 
     int b = (y - 9) * 2;
@@ -57,8 +57,8 @@ public class DemoOperator {
     System.out.println(r8); // 1
 
 
-    // +1 and -1
-    int t = 0;
+    // +1 and -1 , from right to left
+    int t = 0; // int 自己+1
     t++;
     ++t;
     t = t +1;
@@ -102,14 +102,6 @@ public class DemoOperator {
     boolean isFemale = gender != 'M';
     System.out.println(isFemale); // true
     // remember to read from left to right
-
-
-
-
-
-
-
-
 
   }
 }

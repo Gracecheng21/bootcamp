@@ -2,6 +2,12 @@ public class DemoDataType {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
 
+        // Data type: Primitives
+        // 1. (Store Integer) byte, short, int, long
+        // 2. (Store number with decimal place) float, double
+        // 3. (Store Single Character) char
+        // 4. (Store true or false) boolean
+
         //Variable 變量
         // ! 1. interger 整數 - int
         int x = 3;
@@ -81,11 +87,11 @@ public class DemoDataType {
         i1 = 2_147_483_647;
         //int + int = int (overflow)
         i1 = i1 +1;
-        System.out.println(i1);//i1 = 2147483648 overflow
+        System.out.println(i1);//i1 = -2147483648 overflow
 
         // Prepaid an long value 22億 (right hand side)
         // Assign a value into long variable (left hand side)
-        // l1 = 2_200_000_000; //value overflow system error
+        // l1 = 2_200_000_000; //value overflow system error (cannot prepare an int value 22億)
         l1 = 2_200_000_000L;
         l1 = l1 + 3L;
         System.out.println(l1);
@@ -98,7 +104,7 @@ public class DemoDataType {
 
         //int include byte and short value
         //no byte bx = 1b or short sx = 1s
-        //int i8 = 9; byte b9 = i8;
+        //int i8 = 9; byte b9 = i8; int variable -> unsafe
         //byte can't be int, overflow in java system error unsafe
         byte b10 = 3; //direct value include in byte value, true to java
         //short s10 = i8; // unsafe in java
@@ -106,21 +112,21 @@ public class DemoDataType {
         // ! the range of int value should solve the majority of the problem in java system.
         // long is not a default type of variable for storing integer.
 
-        // boolean (either true or false)
+        // ！ boolean (either true or false) 是非題
         boolean b9 = true;
         b9 = false;
 
         int result = 5;
         // "result % 2 == 1" is true
         boolean isResultOddNumber = result % 2 == 1;
-        // "==" checking if equals to
+        // ！ "==" checking if equals to
         System.out.println(isResultOddNumber); // true
 
         int result1 = 10;
         boolean resultOddNumber = result1 % 2 == 1;
         System.out.println(resultOddNumber); // false
 
-        // boolean isSomething/shouldSomething (formula / definition)
+        // ！ boolean isSomething/shouldSomething (formula / definition)
         int age = 65;
         boolean isElderly = age >= 65;
         System.out.println(isElderly); // true

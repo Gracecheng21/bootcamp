@@ -64,6 +64,14 @@ public class Person {
     // ! p1.getName(); // This will return the name of the p1 object
   }
 
+  public boolean isElderly() {
+    return this.age > 65;
+  }
+
+  public static boolean isElderly(Person person) {
+    return person.getAge() > 65;
+  }
+
   // 物件的行為
   public static void main(String[] args) {
     // "new" -> create object
