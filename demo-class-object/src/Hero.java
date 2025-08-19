@@ -1,8 +1,8 @@
 import java.math.BigDecimal;
 
 public class Hero {
-  // Attribute with variable value // Dicationary
-  // Max Hp
+  // Attribute with variable value 
+  // static final: running program cannot change value（已定義數值)
   private static final int[] MAX_HP =
       new int[] {20, 40, 60, 80, 100, 120, 140, 160, 180, 200};
   private static final int[] MAX_MP =
@@ -16,14 +16,17 @@ public class Hero {
   private static final double[] EXP_GAINED =
       new double[] {1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5};
   // final [] = [] {basic value}
+  private static int idCounter = 0;
 
   // state
+  private int id;
   private int level;
   private int hp;
   private int mp;
   private double exp;
 
   public Hero() { // 初始化 start from
+    this.id = ++idCounter; // 每次新增hero, 新增id, 不會重覆
     this.level = 1;
     this.hp = MAX_HP[1];
     this.mp = MAX_MP[1];
@@ -43,6 +46,7 @@ public class Hero {
   public void recoverMp() {
     this.mp = MAX_MP[this.level - 1];
   }
+
 
   // set a method to deductHP (被attack) 被動式解決問題, name by 動詞
   public void deductHP(int deductedHP) {
@@ -110,12 +114,20 @@ public class Hero {
     return MAX_HP[level - 1];
   }
 
-  public static double calcAddedExp(int heroLevel) { // verb + adj + noun ()
+  public int getId() {
+    return this.id;
+  }
+
+  public boolean equals(Hero hero) {
+    return this.id = id;
+  }
+
+  public static double calcAddedExp(int killedHeroLevel) { // verb + adj + noun ()
     return EXP_GAINED[killedHeroLevel - 1];
   }
 
   public static void main(String[] args) {
-    Hero h1 = new Hero();
+    Hero h1 = new Hero(); // use program memory to create object
     System.out.println(h1.getLevel()); // 1
     System.out.println(h1.getPa()); // 10
     System.out.println(h1.getHp()); // 40
