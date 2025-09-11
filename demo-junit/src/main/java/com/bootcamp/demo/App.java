@@ -4,10 +4,16 @@ package com.bootcamp.demo;
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class App {
+
+    public static int sum(int x, int y) {
+        return x + y;
+    }
+
+    public static int getLength(String s) {
+        return s == null ? 0 : s.length();
+        // if (s == null)
+        // return 0;
+        // return s.length();
     }
 }
