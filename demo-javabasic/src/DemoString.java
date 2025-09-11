@@ -106,6 +106,7 @@ public class DemoString {
     System.out.println(s9.replace('l', 'x')); // hexxo
     System.out.println(s9.replace("ll", "abc")); // heabco
     System.out.println(s9); // hello
+    System.out.println("hello".replace("l", "")); // heo replace by empty string
 
     // Function 10: substring()
     String s10 = "hello world";
@@ -116,10 +117,10 @@ public class DemoString {
     System.out.println(s11.toLowerCase()); // hello
     System.out.println(s11.toUpperCase()); // HELLO
 
-    // Function 12: valueOf() -> Convertion
+    // Function 12: valueOf() -> Convertion 
+    // 由String -> int/double , valueOf() 係一個method 可用於double/BigDecimal等等
     int x = 3;
-    String ss = String.valueOf(x);
-    //String.valueOf("anykind of varable");
+    String ss = String.valueOf(x); //String.valueOf("anykind of varable");
     System.out.println(ss);
     String ss2 = String.valueOf(3.3);
 
@@ -127,5 +128,18 @@ public class DemoString {
     System.out.println(d1); // 3.3
 
     Character.valueOf('a');
+
+    String s12 = "Hello";
+    String s13 = String.valueOf("Hello");
+    s12 = s12 + "!";
+    System.out.println(s12); // Hello!
+
+    String s14 = null;
+    // s14.charAt(0);
+//    if (s14 != null) {
+//      System.out.println(s14.length()); // dead code
+//    }
+
+
   }
 }

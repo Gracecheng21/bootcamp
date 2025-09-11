@@ -65,13 +65,14 @@ public class DemoLoop {
     // Print the char index of 'm', if found, print the index; if not found, print -1
     String s2 = "bootcamp";
     // boolean isFound = false;
-    int index = -1;
+    int index = -1; // same as boolean, set it is -1 means false
     for (int i = 0; i < s2.length(); i++) {
       if (s2.charAt(i) == 'm') {
-        index = i;
+        index = i; // if true, will replace the i to a new index value
         // isFound = true;
       }
     }
+    // if (isFound == true) {
     System.out.println(index);
 
     // break
@@ -103,18 +104,25 @@ public class DemoLoop {
     String ss2 = "abcabcabc";
     for (int i = 0; i < ss2.length(); i++) {
       if (ss2.charAt(i) == 'a') {
-        System.out.println(i);
+        System.out.println(i); // 0,3,6
       }
     }
     for (int i = 0; i < ss2.length(); i++) {
-      if (ss2.charAt(i) != 'a') { // same as above but a better presentation
-        continue; // skip the rest of aode line, and then goes to next iteration
-      }
-      System.out.println(i);
+      if (ss2.charAt(i) != 'a') { // (!=) 觸發使用continue, 直接跳過回到上面條件再繼續loop
+        continue; // skip the rest of code line, and then goes to (i++) next iteration
+      } // 跳過所有不符合條件的loop, 只run符合條件的loop
+      System.out.println(i); // 0,3,6 // same as above but more readable
+    }
+
+    String s = "hello";
+    // for (int i = 0; )
+
+    // for-each loop
+    for (char ch : s.toCharArray()) {
+      System.out.println(ch);
     }
 
     
-
 
   }
 }

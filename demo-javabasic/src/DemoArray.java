@@ -1,4 +1,5 @@
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class DemoArray {
   public static void main(String[] args) {
@@ -39,8 +40,8 @@ public class DemoArray {
 
     // arr2.length -> array length
     // for (int i = 0; i < 4; i++) {
-    for (int i = 0; i < arr2.length; i++) {
-      System.out.println(arr2[i]);
+    for (int i = 0; i < arr2.length; i++) { // arr2.length = 4 [0,1,2,3]
+      System.out.println(arr2[i]); // print out the whole array values
     }
 
     // String[]
@@ -54,11 +55,11 @@ public class DemoArray {
     for (int i = 0; i < arr4.length; i++) {
       System.out.println(arr4[i]);
     }
-    // for loop + if (filtering)
+    // for loop (all) + if (filtering)
     // Print the strings in the array, which length > 4
     for (int i = 0; i < arr4.length; i++) {
       if (arr4[i].length() > 4) {
-        System.out.println(arr4[i]);
+        System.out.println(arr4[i]); // bootcamp
       }
     }
     // for loop + if (AND OR)
@@ -104,8 +105,34 @@ public class DemoArray {
     System.out.println(a); // 8
     System.out.println(b); // 6
 
+    int[] arr6 = new int[] {9, 7, 10, -3, 8};
+    // Move the max value to the tail of the array.
+    // for + if + swap
+    for (int i = 0; i < arr6.length - 1; i++) { //compare 4 times
+      if (arr6[i] > arr6[i + 1]) {
+        backup = arr6[i];
+        arr6[i] = arr6[i + 1];
+        arr6[i + 1] = backup;
+      }
+    }
+    System.out.println(Arrays.toString(arr6)); // [7, 9, -3, 8, 10]
 
-
+    // Sorting
+    // [7, 9, -3, 8, 10]
+    // [x, x, -x, 9, 10]
+    // ...
+    // [-3, 7, 8, 9, 10]
+    arr6 = new int[] {9, 7, 10, -3, 8};
+    for (int i = 0; i < arr6.length -1; i++) { // step 1 set the loop time
+      for (int j = 0; j < arr6.length - 1 - i ; j++) { // step 2 set the criteria for the loop
+        if (arr6[j] > arr6[j + 1]) {
+          backup = arr6[j];
+          arr6[j] = arr6[j + 1];
+          arr6[j + 1] = backup;
+        }
+      }
+    }
+    System.out.println(Arrays.toString(arr6)); // [-3, 7, 8, 9, 10]
 
   }
 

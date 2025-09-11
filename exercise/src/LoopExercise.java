@@ -1,29 +1,76 @@
+import java.util.Arrays;
+
 public class LoopExercise {
   public static void main(String[] args) {
     // 1. Print 6 times hello
     // Use: for loop
-    
+    for (int i = 0; i < 6; i++) {
+      System.out.println("hello");
+    }
+
     // 2. Expected output: "0,1,2,3,4"
     // Use: for loop
+    for (int i = 0; i < 5; i++) {
+      System.out.println(i);
+    }
 
     // 3. Print even numbers between 2 and 20
     // Use: for loop + if
+    for (int i = 2; i < 20; i++) {
+      if (i % 2 == 0) {
+        System.out.println(i);
+      }
+    }
 
     // 4. Print the numbers between 1 and 100, which can be divided by 3 or 5
     // Use: for loop + if
+    for (int i = 1; i < 100; i++) {
+      if (i % 3 == 0 || i % 5 == 0) {
+        System.out.println(i);
+      }
+    }
 
     // 5. Sum up the numbers between 0 and 15 and print it
     // Use: for loop
+    int sum = 0;
+    for (int i = 0; i < 16; i++) {
+      sum += i;
+    }
+    System.out.println(sum);
 
     // 6. sum up all odd numbers betwen 0 - 10
     // Sum up all even numbers betwen 0 - 10
     // Find the product of evenSum and oddSum
     // Use: for loop + if
+    int oddSum = 0;
+    int evenSum = 0;
+
+    for (int i = 0; i < 11; i++) {
+      if (i % 2 == 0) {
+        evenSum += i;
+      } else {
+        oddSum += i;
+      }
+    }
+    System.out.println(evenSum);
+    System.out.println(oddSum);
 
     // 7. Check if 'd' exists in the string.
     // print "d is found."
     // otherwise, print "d is not found."
     String str7 = "ijkabcpodi";
+    boolean isFound = false;
+    for (int i = 0; i < str7.length(); i++) {
+      if (str7.charAt(i) == 'd') {
+        isFound = true;
+        break;
+      }
+    }
+    if (isFound) {
+      System.out.println("d is found");
+    } else {
+      System.out.println("d is not found");
+    }
 
     // 8. Check if the string s8b is a substring of s8a
     // print "s8b is a substring."
@@ -31,22 +78,44 @@ public class LoopExercise {
     // Use: for loop + if + substring method
     String s8a = "abcba";
     String s8b = "cba";
+    // boolean isSubstring = false;
+    for (int i = 0; i < s8a.length(); i++) {
+      if (s8a.contains(s8b)) {
+        System.out.println("s8b is a substring.");
+        break;
+      } else {
+        System.out.println("s8b is not a substring.");
+        break;
+      }
+    }
 
     // 9. Count the number of char value in the given String s9
     // print "count=2"
     // Use: for loop + if
     String s9 = "pampers";
     char c9 = 'p';
+    for (int i = 0; i < s9.length(); i++) {
+      if (s9.charAt(i) == c9) {
+        break;
+      }
+    }
+    System.out.println("count=2");
 
     // 10. Replace all char value 'x' in the given String array by 'k'
     // Print arr10: ["akc", "kkk", "k", "kbk", "mkk"]
     // Use: for loop + replace method
     String[] arr10 = new String[] {"akc", "xxx", "x", "xbx", "mkx"};
+    for (int i = 0; i < arr10.length; i++) {
+      arr10[i] = arr10[i].replace('x', 'k');
+    }
+    System.out.println(Arrays.toString(arr10));
+
 
     // 11. Count the number of Uppercase char value in the given string s11
     // Print "count uppercase=4"
     // Use: for loop + if
     String s11 = "kLKloOOu";
+    for (int i = 0; i < )
 
     // 12. Print the following pattern of * value
     // *****
@@ -63,7 +132,7 @@ public class LoopExercise {
     // u -> 4 score
     // for other character, -1 score
     String s13 = "lrlaudbucp";
-    
+
     // 14. Assign the long values of 1, 4, 9, -4 to the given array arr14
     long[] arr14 = new long[4];
 
@@ -88,7 +157,8 @@ public class LoopExercise {
 
     // 20. Find the longest String in the String array
     // Print "longest=programming"
-    String[] arr20 = new String[] {"python", "array", "programming", "java", "bootcamp"};
-    
+    String[] arr20 =
+        new String[] {"python", "array", "programming", "java", "bootcamp"};
+
   }
 }
