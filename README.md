@@ -1,5 +1,32 @@
-# bootcamp
-
-## sub-heading
-- welcome to bootcamp.
-  - Hi everyone.
+## Java 
+### Week 1: 
+- (important) primitives, Wrapper Class, String, BigDecimal, LocalDate, LocalDatTime 
+- (important) if-else, loop (For-each) 
+- (less important) switch, scanner 
+### Week 2: 
+- (important) array -> basic operation (loop,get by index) 
+- (less important) algorithm examples: min/max, counting, searching, sorting, ascii
+### Week 3: 
+- (important) class & object (heap memory, object reference, object), Object.class 
+- (important) constructor, getter, setter. Static/Final variable, method & class. 
+- (important) hashCode, equals, toString 
+- (important) method -> presentation (bmi, area, isVip, etc) 
+- (important) One to Many (Many: array, ArrayList), One to One (Class can be Attribute type)
+### Week 4: 
+- (important) Abstraction (Interface), Polymorphism, Inheritance (Parnet class), Encapsulation 
+- (important) Polymorphism (Apply to Parent Class / Interface), static & dynamic Polymorphism 
+- (important) enum - (less important) Comparable/ Comparator 
+### Week 5: 
+- (important) Collection -> List, Queue, Set 
+- (important) Map - (important) ArrayList, HashSet, HashMap 
+- (important) Exception -> checked and unchecked exception, try & catch, throw 
+- (less important) Stack, ArrayDeque, Vetor, PriorityQueue 
+- (less important) Generic 
+### Week 6: 
+- (important) Stream -> filter, map, sort, collect + flatmap 
+- (important) Optional - (important) Builder Pattern (lombok) 
+- (less important) count, distinct 
+- (less important) Threading, thread-safe 
+- Maven -> mvn command -> pom.xml -> clean, compile, test, install 
+- (important) dependency -> external Java Library (junit) 
+- (less important) junit, mockito, hamcrest"

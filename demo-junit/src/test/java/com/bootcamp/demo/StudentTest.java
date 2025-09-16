@@ -21,19 +21,28 @@ public class StudentTest {
   @InjectMocks
   private Student student;
 
+  // ! You don't nees to write this main(), because the framework generates it for you.
+  public static void main(String[] args) {
+    StudentTest st = new StudentTest();
+    // ... prepare enviroment objects (Student and MathOperation)
+    st.testStudentOperate();
+    st.testStudentOperate2();
+  }
+
+  // ! assertEquals: usually for raw types only: Primitives, Wrapper Class, String
   @Test
   void testStudentOperate() {
     // Student s1 = new Student("John", mathOperation);
     // test getter, setter
 
     // Assumption
-    when(mathOperation.operate(2,3)).thenReturn(100);
+    when(mathOperation.operate(2,6)).thenReturn(10);
 
     // Start Testing
     int actualResult = student.operate(2, 3);
-    Assertions.assertEquals(300, actualResult);
+    Assertions.assertEquals(30, actualResult); // ! object -> equals()
 
-    verify(mathOperation, times(1)).operate(2, 3); 
+    verify(mathOperation, times(1)).operate(2, 6); 
     // call method times(1) once to actualResult, no times will default times(1)
   }
 
@@ -41,11 +50,11 @@ public class StudentTest {
   void testStudentOperate2() {
     // Student s1 = new Student("John", mathOperation);
 
-    when(mathOperation.operate(8, 3)).thenReturn(60);;
+    when(mathOperation.operate(8, 5)).thenReturn(60);;
 
     int actualResult = student.operate(8, 3);
     Assertions.assertEquals(480, actualResult);
-    verify(mathOperation, times(1)).operate(8, 3);
+    verify(mathOperation, times(1)).operate(8, 5);
   }
 
   

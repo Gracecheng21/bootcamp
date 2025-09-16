@@ -40,9 +40,17 @@ public class Student { // Calculation skill
 
   public int operate(int x, int y) {
     if (x > y) {
-      return this.mathOperation.operate(x, y) * x; // test case 1
+      // ! Day 1
+      // return this.mathOperation.operate(x, y) * x; // test case 1
+      // ! Day 2
+      return this.mathOperation.operate(x, y + 2) * x; // test case 1
+
     } else {
-      return this.mathOperation.operate(x, y) * y; // test case 2
+      // ! Day 1
+      // return this.mathOperation.operate(x, y) * y; // test case 2
+      // ! Day 2
+      return this.mathOperation.operate(x, y + 3) * y; // test case 2
+
     }
   }
 

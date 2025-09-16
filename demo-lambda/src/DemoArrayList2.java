@@ -25,9 +25,8 @@ public class DemoArrayList2 {
     System.out.println(names2.get(0)); // John
 
     // ! Arrays.asList() vs List.of()
-    // 1. add & remove are not allowed
+    // 1. add & remove are not allowed : fixed size
     // 2. Arrays.asList() -> able to modify element (i.e. set() method), but List.of() cannot.
-
 
   }
 

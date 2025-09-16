@@ -115,7 +115,9 @@ public class LoopExercise {
     // Print "count uppercase=4"
     // Use: for loop + if
     String s11 = "kLKloOOu";
-    for (int i = 0; i < )
+    for (int i = 0; i < s11.length(); i++) {
+      if (s11.)
+    }
 
     // 12. Print the following pattern of * value
     // *****
